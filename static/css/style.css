@@ -1,0 +1,318 @@
+/* ==========================
+   GOOGLE FONT & RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#111827;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* ==========================
+   MAIN LAYOUT
+========================== */
+
+.container{
+    display:flex;
+    width:100%;
+    height:100vh;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar{
+    width:280px;
+    background:#111827;
+    color:#ffffff;
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.new-chat{
+    border:none;
+    background:#2563eb;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.new-chat:hover{
+    background:#1d4ed8;
+}
+
+.history-title{
+    margin-top:30px;
+    margin-bottom:15px;
+    color:#9ca3af;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+.history{
+    overflow-y:auto;
+}
+
+.chat-item{
+    width:100%;
+    padding:14px;
+    margin-bottom:10px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    background:transparent;
+    color:#ffffff;
+    text-align:left;
+    border:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.chat-item:hover{
+    background:rgba(255,255,255,0.06);
+}
+
+.chat-item.active{
+    background:#2563eb;
+}
+
+.chat-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.chat-title{
+    font-weight:600;
+    font-size:15px;
+}
+
+.chat-preview{
+    font-size:12px;
+    color:#9ca3af;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.delete-chat{
+    border:none;
+    background:transparent;
+    color:#ef4444;
+    font-size:13px;
+    cursor:pointer;
+    padding:0;
+}
+
+.history-empty{
+    color:#9ca3af;
+    font-size:14px;
+    padding:10px 0;
+}
+
+/* ==========================
+   CHAT AREA
+========================== */
+
+.chat-area{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    background:white;
+}
+
+header{
+    height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    border-bottom:1px solid #e5e7eb;
+    background:white;
+}
+
+.header-left{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+header h2{
+    color:#111827;
+}
+
+.status{
+    color:#16a34a;
+    font-weight:600;
+}
+
+/* ==========================
+   MESSAGE AREA
+========================== */
+
+.messages{
+    flex:1;
+    overflow-y:auto;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.message{
+    max-width:70%;
+    padding:15px 18px;
+    border-radius:15px;
+    line-height:1.6;
+    animation:fade .3s ease;
+}
+
+.user{
+    align-self:flex-end;
+    background:#2563eb;
+    color:white;
+}
+
+.bot{
+    align-self:flex-start;
+    background:#eef2ff;
+    color:#111827;
+}
+
+/* ==========================
+   INPUT AREA
+========================== */
+
+.input-area{
+    display:flex;
+    padding:20px;
+    border-top:1px solid #e5e7eb;
+    background:#ffffff;
+}
+
+.input-area input{
+    flex:1;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    padding:15px;
+    outline:none;
+    font-size:16px;
+    background:#ffffff;
+    color:#111827;
+}
+
+.input-area input:focus{
+    border-color:#2563eb;
+}
+
+.input-area button{
+    margin-left:15px;
+    min-width:100px;
+    padding:14px 18px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.input-area button:hover{
+    background:#1d4ed8;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:20px;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.message{
+
+    max-width:90%;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.sidebar{
+
+    display:none;
+
+}
+
+header{
+
+    padding:20px;
+
+}
+
+.messages{
+
+    padding:20px;
+
+}
+
+}

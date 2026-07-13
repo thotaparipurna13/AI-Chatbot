@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHub AI Chatbot</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6f8d7f1f5f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            🤖 KHub AI
+
+        </div>
+
+        <button class="new-chat" id="newChatBtn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            New Chat
+
+        </button>
+
+        <div class="history-title">
+
+            Conversations
+
+        </div>
+
+        <div class="history" id="historyList"></div>
+
+    </aside>
+
+    <!-- Main Chat -->
+
+    <main class="chat-area">
+
+        <header>
+
+            <div class="header-left">
+                <h2>AI Assistant</h2>
+                <span class="status"></span>
+            </div>
+
+        </header>
+
+        <section class="messages" id="messages"></section>
+
+        <div class="input-area">
+
+            <input
+                id="message"
+                type="text"
+                placeholder="Type your message..."
+            >
+
+            <button id="sendBtn">Send</button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
